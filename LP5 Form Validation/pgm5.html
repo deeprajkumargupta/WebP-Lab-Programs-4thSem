@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Registration Form Validation</title>
+
+        <style>
+        body {
+            font-family: Arial, sans-serif;
+            /* background-color: #f2f2f2; */
+            background:
+            linear-gradient(217deg, rgb(255 0 0 / 0.8), transparent 70.71%),
+            linear-gradient(127deg, rgb(0 255 0 / 0.8), transparent 70.71%),
+            linear-gradient(336deg, rgb(0 0 255 / 0.8), transparent 70.71%);
+        }
+
+        .container {
+            width: 350px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: darkblue;
+        }
+        input[type="radio"]{
+            width: auto;
+        }
+    </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h2>Registration Form</h2>
+
+            <form id="regForm">
+
+                Name:
+                <input type="text" id="name">
+                <div class="error" id="nameError"></div>
+
+                Qualification:
+                <select id="qualification">
+                    <option value>Select</option>
+                    <option>B.E</option>
+                    <option>BCA</option>
+                    <option>B.Sc</option>
+                </select>
+                <div class="error" id="qualificationError"></div>
+
+                Hobbies:
+                <input type="text" id="hobbies">
+
+                Email:
+                <input type="text" id="email">
+                <div class="error" id="emailError"></div>
+
+                Password:
+                <input type="password" id="password">
+                <div class="error" id="passwordError"></div>
+
+                Confirm Password:
+                <input type="password" id="confirmPassword">
+                <div class="error" id="confirmPasswordError"></div>
+
+                Phone Number:
+                <input type="text" id="phone">
+                <div class="error" id="phoneError"></div>
+                Gender:
+                <input type="radio" name="gender" value="Male" id="male">
+                <label for="male">Male</label>
+                <input type="radio" name="gender" value="Female" id="female">
+                <label for="female">Female</label>
+                <div class="error" id="genderError"></div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("regForm").addEventListener("submit", function(event) {
+
+                let isValid = true;
+
+                document.querySelectorAll(".error").forEach(function(e) {
+                    e.innerHTML = "";
+                });
+
+                let name = document.getElementById("name").value;
+                if (name === "") {
+                    document.getElementById("nameError").innerHTML = "Name is required";
+                    isValid = false;
+                }
+
+                let qualification = document.getElementById("qualification").value;
+                if (qualification === "") {
+                    document.getElementById("qualificationError").innerHTML = "Select qualification";
+                    isValid = false;
+                }
+
+                let email = document.getElementById("email").value;
+                let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+                if (!email.match(emailPattern)) {
+                    document.getElementById("emailError").innerHTML = "Enter valid email";
+                    isValid = false;
+                }
+
+                let password = document.getElementById("password").value;
+
+                if (password.length < 6) {
+                    document.getElementById("passwordError").innerHTML =
+                        "Password must be at least 6 characters";
+                    isValid = false;
+                }
+
+                let confirmPassword =
+                    document.getElementById("confirmPassword").value;
+
+                if (password !== confirmPassword) {
+                    document.getElementById("confirmPasswordError").innerHTML =
+                        "Passwords do not match";
+                    isValid = false;
+                }
+
+                let phone = document.getElementById("phone").value;
+                let phonePattern = /^[0-9]{10}$/;
+
+                if (!phone.match(phonePattern)) {
+                    document.getElementById("phoneError").innerHTML =
+                        "Enter valid 10-digit phone number";
+                    isValid = false;
+                }
+
+                let gender = document.querySelector('input[name="gender"]:checked');
+
+                if (!gender) {
+                    document.getElementById("genderError").innerHTML =
+                        "Select gender";
+                    isValid = false;
+                }
+
+                if (!isValid) {
+                    event.preventDefault();
+                } else {
+                    alert("Registration Successful");
+                }
+            });
+        </script>
+
+    </body>
+</html>
