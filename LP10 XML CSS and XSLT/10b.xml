@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="student.xsl"?>
+
+<student>
+    <USN>1CD24CS074</USN>
+    <Name>Deepraj Kumar Gupta</Name>
+    <CollegeName>Cambridge Institute of Technology</CollegeName>
+    <Branch>Computer Science</Branch>
+    <YearOfJoining>2024</YearOfJoining>
+    <EmailID>deepraj.24cse@cambridge.edu.in</EmailID>
+</student>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<students>
+    <student>
+        <USN>1CD24CS074</USN>
+        <Name>Deepraj Kumar Gupta</Name>
+        <CollegeName>Cambridge Institute Of Technology </CollegeName>
+        <Branch>CSE</Branch>
+        <YearOfJoining>2024</YearOfJoining>
+        <EmailID>deepraj.24cse@cambridge.edu.in</EmailID>
+    </student>
+
+   <student>
+        <USN>1CD24CS116</USN>
+        <Name>Keerthan</Name>
+        <CollegeName>Cambridge Institute Of Technology </CollegeName>
+        <Branch>CSE</Branch>
+        <YearOfJoining>2024</YearOfJoining>
+        <EmailID>keerthan.24cse@cambridge.edu.in</EmailID>
+    </student>
+
+   <student>
+        <USN>1CD24CS121</USN>
+        <Name>Kishan</Name>
+        <CollegeName>Cambridge Institute Of Technology </CollegeName>
+        <Branch>CSE</Branch>
+        <YearOfJoining>2024</YearOfJoining>
+        <EmailID>kishan.24cse@cambridge.edu.in</EmailID>
+    </student>
+</students>
