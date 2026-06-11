@@ -1,0 +1,26 @@
+students {
+    display: block;
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+student {
+    display: block;
+    border: 2px solid #333;
+    background-color: #ffffff;
+    margin: 10px;
+    padding: 15px;
+}
+
+USN, Name, CollegeName, Branch, YearOfJoining, EmailID {
+    display: block;
+    margin: 5px;
+    font-size: 16px;
+}
+
+Name {
+    color: blue;
+    font-weight: bold;
+    font-size: 18px;
+}
